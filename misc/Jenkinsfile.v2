@@ -12,9 +12,10 @@ node {
        withEnv([
          'npm_config_cache=npm-cache',
          'HOME=.',
-       ])
-       sh 'npm install --only=dev'
-       sh 'npm test'
+       ]){
+         sh 'npm install --only=dev'
+         sh 'npm test'
+       }
      }
    }
    stage('test with a DB') {
